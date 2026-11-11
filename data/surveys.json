@@ -5,9 +5,29 @@
   "contact": "",
   "openInNewTab": false,
   "items": [
-    { "id": "a1", "name": "교육행정직", "url": "https://example.com/survey-1", "visible": true },
-    { "id": "a2", "name": "교원", "url": "https://example.com/survey-2", "visible": true },
-    { "id": "a3", "name": "교육공무직", "url": "https://example.com/survey-3", "visible": true },
-    { "id": "a4", "name": "사립학교 사무직원", "url": "https://example.com/survey-4", "visible": true }
+    {
+      "id": "a1",
+      "name": "교육행정직",
+      "url": "https://example.com/survey-1",
+      "visible": true
+    },
+    {
+      "id": "a2",
+      "name": "교원",
+      "url": "https://example.com/survey-2",
+      "visible": true
+    },
+    {
+      "id": "a3",
+      "name": "교육공무직",
+      "url": "https://example.com/survey-3",
+      "visible": true
+    },
+    {
+      "id": "a4",
+      "name": "사립학교 사무직원",
+      "url": "https://example.com/survey-4",
+      "visible": true
+    }
   ]
 }
