@@ -100,7 +100,7 @@ a{color:var(--accent)}
           <div><label for="newPw2">새 비밀번호 확인</label><input type="password" id="newPw2" autocomplete="new-password"></div>
         </div>
       </div>
-      <p class="hint">12자 이상 필수, 16자 이상 권장. 무작위 단어 4개 이상을 이어 붙이면 기억하기 쉽고 안전합니다(예: 파란 우산 기차 연필 형태). 비밀번호를 잊으면 토큰으로 이 설정을 다시 하면 됩니다.</p>
+      <p class="hint">6자 이상 필수. 금고 파일이 공개되어 있어 짧을수록 추측당하기 쉬우니, 영문·숫자·기호를 섞거나 더 길게 정하는 것을 권장합니다. 비밀번호를 잊으면 토큰으로 이 설정을 다시 하면 됩니다.</p>
       <div class="bar" style="justify-content:flex-end">
         <button class="primary" id="btnSetup" type="button">비밀번호 설정</button>
       </div>
@@ -141,7 +141,7 @@ a{color:var(--accent)}
   var VAULT_PATH = 'data/admin-key.json';
   var API = 'https://api.github.com';
   var ITER = 600000;            // OWASP 권장: PBKDF2-HMAC-SHA256 600,000회 이상
-  var MIN_PW = 12;
+  var MIN_PW = 6;
   var state = { data:null, sha:null, dirty:false, token:null, vault:null };
   var $ = function(id){ return document.getElementById(id); };
 
