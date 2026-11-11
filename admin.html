@@ -66,7 +66,7 @@ a{color:var(--accent)}
 <body>
 <main>
   <h1>설문 게이트웨이 관리</h1>
-  <p class="sub">직종과 설문 링크를 수정하고 저장하면 게이트웨이에 반영됩니다. 반영까지 보통 1~2분 걸립니다.</p>
+  <p class="sub">대상과 설문 링크를 수정하고 저장하면 게이트웨이에 반영됩니다. 반영까지 보통 1~2분 걸립니다.</p>
 
   <section aria-labelledby="h-login">
     <h2 id="h-login">관리자 로그인</h2>
@@ -123,11 +123,11 @@ a{color:var(--accent)}
     </section>
 
     <section aria-labelledby="h-items">
-      <h2 id="h-items">직종과 설문 링크</h2>
-      <div class="row head"><span>직종명</span><span>설문 링크</span><span>표시 · 순서 · 삭제</span></div>
+      <h2 id="h-items">대상과 설문 링크</h2>
+      <div class="row head"><span>대상명</span><span>설문 링크</span><span>표시 · 순서 · 삭제</span></div>
       <div id="rows"></div>
       <div class="bar">
-        <button type="button" id="btnAdd">직종 추가</button>
+        <button type="button" id="btnAdd">대상 추가</button>
         <button type="button" class="primary" id="btnSave">저장</button>
       </div>
       <p class="msg" id="saveMsg" role="status"></p>
@@ -270,7 +270,7 @@ a{color:var(--accent)}
       .then(function(token){ return loadData(token); })
       .then(function(){
         $('pw').value = '';
-        msg($('loginMsg'), '열렸습니다. 직종 ' + state.data.items.length + '개를 불러왔습니다.', 'ok');
+        msg($('loginMsg'), '열렸습니다. 대상 ' + state.data.items.length + '개를 불러왔습니다.', 'ok');
       })
       .catch(function(err){
         if (err === 'novault') return;
@@ -346,13 +346,13 @@ a{color:var(--accent)}
     var box = $('rows'); box.innerHTML = '';
     var items = state.data.items;
     if (!items.length){
-      var p = document.createElement('p'); p.className = 'hint'; p.textContent = '아직 직종이 없습니다. "직종 추가"를 눌러 첫 직종을 만들어 주세요.';
+      var p = document.createElement('p'); p.className = 'hint'; p.textContent = '아직 대상이 없습니다. "대상 추가"를 눌러 첫 대상을 만들어 주세요.';
       box.appendChild(p); return;
     }
     items.forEach(function(it, i){
       var row = document.createElement('div'); row.className = 'row' + (it.visible ? '' : ' hidden-item');
       var n = document.createElement('input'); n.type = 'text'; n.value = it.name || ''; n.placeholder = '예: 교육행정직';
-      n.setAttribute('aria-label', (i + 1) + '번째 직종명');
+      n.setAttribute('aria-label', (i + 1) + '번째 대상명');
       n.oninput = function(){ it.name = this.value; touch(); };
       var u = document.createElement('input'); u.type = 'url'; u.value = it.url || ''; u.placeholder = 'https://forms.gle/...';
       u.setAttribute('aria-label', (i + 1) + '번째 설문 링크');
@@ -362,7 +362,7 @@ a{color:var(--accent)}
       tools.appendChild(btn('↑', '위로 이동', '', function(){ if (i > 0){ items.splice(i - 1, 0, items.splice(i, 1)[0]); touch(); renderRows(); } }));
       tools.appendChild(btn('↓', '아래로 이동', '', function(){ if (i < items.length - 1){ items.splice(i + 1, 0, items.splice(i, 1)[0]); touch(); renderRows(); } }));
       tools.appendChild(btn('삭제', '삭제', 'danger', function(){
-        if (confirm('"' + (it.name || '이름 없음') + '" 직종을 삭제할까요? 저장해야 실제로 반영됩니다.')){ items.splice(i, 1); touch(); renderRows(); }
+        if (confirm('"' + (it.name || '이름 없음') + '" 대상을 삭제할까요? 저장해야 실제로 반영됩니다.')){ items.splice(i, 1); touch(); renderRows(); }
       }));
       row.appendChild(n); row.appendChild(u); row.appendChild(tools); box.appendChild(row);
     });
@@ -380,8 +380,8 @@ a{color:var(--accent)}
     for (var i = 0; i < d.items.length; i++){
       var it = d.items[i], no = (i + 1) + '번째 줄: ';
       it.name = String(it.name || '').trim(); it.url = String(it.url || '').trim();
-      if (!it.name) return no + '직종명을 입력해 주세요.';
-      if (names[it.name]) return no + '"' + it.name + '" 직종이 중복됩니다.';
+      if (!it.name) return no + '대상명을 입력해 주세요.';
+      if (names[it.name]) return no + '"' + it.name + '" 대상이 중복됩니다.';
       names[it.name] = 1;
       var ok = false; try { ok = new URL(it.url).protocol === 'https:'; } catch(e){}
       if (!ok) return no + '설문 링크는 https://로 시작하는 전체 주소여야 합니다.';
