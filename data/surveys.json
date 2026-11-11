@@ -1,0 +1,13 @@
+{
+  "org": "서울특별시교육청교육연수원",
+  "title": "2026 교육훈련 수요 조사",
+  "notice": "본인의 직종을 선택하면 해당 설문으로 이동합니다. 응답 시간은 약 5분입니다.",
+  "contact": "",
+  "openInNewTab": false,
+  "items": [
+    { "id": "a1", "name": "교육행정직", "url": "https://example.com/survey-1", "visible": true },
+    { "id": "a2", "name": "교원", "url": "https://example.com/survey-2", "visible": true },
+    { "id": "a3", "name": "교육공무직", "url": "https://example.com/survey-3", "visible": true },
+    { "id": "a4", "name": "사립학교 사무직원", "url": "https://example.com/survey-4", "visible": true }
+  ]
+}
