@@ -8,19 +8,19 @@
     {
       "id": "a1",
       "name": "일반직공무원",
-      "url": "https://example.com/survey-1",
+      "url": "https://ksurv.kr/akM3PTw7Nzs",
       "visible": true
     },
     {
       "id": "a3",
       "name": "사립학교 행정직원",
-      "url": "https://example.com/survey-3",
+      "url": "https://ksurv.kr/akM3PTw7OTc",
       "visible": true
     },
     {
       "id": "a4",
       "name": "교육공무직원",
-      "url": "https://example.com/survey-4",
+      "url": "https://ksurv.kr/akM3PTw7OTk",
       "visible": true
     }
   ]
