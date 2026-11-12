@@ -1,31 +1,25 @@
 {
   "org": "서울특별시교육청교육연수원",
-  "title": "2026 교육훈련 수요 조사(AI)",
-  "notice": "본인의 직종을 선택하면 해당 설문으로 이동합니다. 응답 시간은 약 5분입니다.",
-  "contact": "문의: 교육행정연수부 이정원(02-3019-8117)",
+  "title": "2027년 AI·디지털 교육훈련  확대·개편 관련 수요조사",
+  "notice": "대상을 선택하면 해당 설문으로 이동합니다. (소요시간: 3분 내외)",
+  "contact": "",
   "openInNewTab": false,
   "items": [
     {
       "id": "a1",
-      "name": "교육행정직",
+      "name": "일반직공무원",
       "url": "https://example.com/survey-1",
       "visible": true
     },
     {
-      "id": "a2",
-      "name": "교원",
-      "url": "https://example.com/survey-2",
-      "visible": true
-    },
-    {
       "id": "a3",
-      "name": "교육공무직",
+      "name": "사립학교 행정직원",
       "url": "https://example.com/survey-3",
       "visible": true
     },
     {
       "id": "a4",
-      "name": "사립학교 행정직원",
+      "name": "교육공무직원",
       "url": "https://example.com/survey-4",
       "visible": true
     }
